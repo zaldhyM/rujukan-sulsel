@@ -9,4 +9,6 @@ CREATE TABLE `jenis_referensi` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
 INSERT INTO master.jenis_referensi (ID, DESKRIPSI, SINGKATAN, APLIKASI)
-VALUES (1, 'Kelompok Fakses', '', 0);
+VALUES 
+(1, 'Kelompok Fakses', '', 0),
+(2, 'Jenis Kelamin', '', 0);

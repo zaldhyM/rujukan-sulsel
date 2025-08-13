@@ -22,4 +22,6 @@ VALUES
 (1, 9, 'PSC', 1),
 (1, 10, 'DInas Kota/Kab', 1),
 (1, 11, 'Dinas Propinsi', 1),
-(1, 99, 'Kemkes', 1);
+(1, 99, 'Kemkes', 1),
+(2, 1, 'Laki - Laki', 1),
+(2, 2, 'Perempuan', 1);
