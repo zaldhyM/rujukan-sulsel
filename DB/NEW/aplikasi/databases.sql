@@ -1,1 +1,1 @@
-CREATE SCHEMA `aplikasi`
+CREATE SCHEMA `aplikasi`;
