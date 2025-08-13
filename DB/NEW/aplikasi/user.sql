@@ -1,0 +1,19 @@
+-- aplikasi.pengguna definition
+USE `aplikasi`;
+CREATE TABLE `user` (
+  `ID` smallint NOT NULL AUTO_INCREMENT,
+  `USERNAME` varchar(50) NOT NULL,
+  `PASSWORD` text NOT NULL,
+  `NAMA` varchar(150) NOT NULL,
+  `NIK` char(16) DEFAULT NULL,
+  `ID_FASKES` smallint DEFAULT '0',
+  `MASA_AKTIF` date DEFAULT NULL,
+  `TERAKHIR_UBAH_PASSWOD` datetime DEFAULT NULL,
+  `STATUS` tinyint NOT NULL DEFAULT '1',
+  PRIMARY KEY (`ID`),
+  KEY `USERNAME` (`USERNAME`),
+  KEY `NIK` (`NIK`),
+  KEY `ID_FASKES` (`ID_FASKES`),
+  KEY `STATUS` (`STATUS`),
+  KEY `MASA_AKTIF` (`MASA_AKTIF`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
