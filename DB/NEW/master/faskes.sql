@@ -10,7 +10,7 @@ CREATE TABLE `faskes` (
   `EMAIL` varchar(50) DEFAULT '',
   `PROV` CHAR(10) DEFAULT '' COMMENT 'kode wilayah propinsi',
   `KAB` CHAR(10) DEFAULT '' COMMENT 'kode wilayah KOta/Kab',
-  `KELOMPOK FASKES` tinyint(0) DEFAULT '0' COMMENT '1, RSU, 2. RSB, 3. RSIA. 4. Balai, 5. Klinik, 6 PKM,  7. RSK, 8 RSGM 77, DInas Kota/Kab, 71. PSC, 88, Dinas Propinsi, 99. Kemkes',
+  `KELOMPOK FASKES` tinyint(0) DEFAULT '0' COMMENT 'db master table referensi JENIS = 1',
   `LAT` varchar(50) DEFAULT NULL,
   `LNG` varchar(50) DEFAULT NULL,
   `TANGGAL` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
