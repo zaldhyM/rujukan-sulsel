@@ -1,5 +1,6 @@
 -- aplikasi.pengguna definition
 USE `aplikasi`;
+
 CREATE TABLE `user` (
   `ID` smallint NOT NULL AUTO_INCREMENT,
   `USERNAME` varchar(50) NOT NULL,
