@@ -10,6 +10,7 @@ CREATE TABLE `user` (
   `ID_FASKES` smallint DEFAULT '0',
   `MASA_AKTIF` date DEFAULT NULL,
   `TOKEN` text DEFAULT '',
+  `ROLE` enum('admin', 'faskes', 'dinkeskab', 'dinkesprov') COMMENT 'penentuan alur hak akses berdasarkan role',
   `STATUS_TELEGRAM` tinyint DEFAULT '0' COMMENT '1. telgram aktif 0. tidak aktif',
   `ID_TELEGRAM` char(12) DEFAULT '' COMMENT 'menyimpan id telegram dari user',
   `TERAKHIR_UBAH_PASSWORD` datetime DEFAULT NULL,
