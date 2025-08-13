@@ -3,7 +3,7 @@ USE `master`;
 
 CREATE TABLE `referensi` (
   `JENIS` tinyint(4) NOT NULL,
-  `ID` smallint(4) NOT NULL AUTO_INCREMENT,
+  `ID` smallint NOT NULL AUTO_INCREMENT,
   `DESKRIPSI` varchar(150) NOT NULL,
   `STATUS` tinyint(4) NOT NULL DEFAULT 1,
   PRIMARY KEY (`JENIS`,`ID`) USING BTREE
