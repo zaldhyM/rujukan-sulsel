@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql_db_rujukan
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: S!GApRujukan@kemkes.go.id
+      MYSQL_DATABASE: test
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: S!GApRujukan@kemkes.go.id
+    ports:
+      - "3308:3306" # expose MySQL di port 3308
+    volumes:
+      - ./db_data:/var/lib/mysql
+
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php_app_rujukan
+    restart: always
+    volumes:
+      - ./apps:/var/www/html
+    ports:
+      - "8088:80" # expose PHP+Apache di port 8088
+    depends_on:
+      - db
+
+volumes:
+  db_data:
