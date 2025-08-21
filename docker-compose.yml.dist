@@ -1,32 +1,45 @@
 version: "3.8"
 
 services:
+  # MySQL
   db:
     image: mysql:8.0
-    container_name: mysql_db_rujukan
+    container_name: mysql_sigap
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: S!GApRujukan@kemkes.go.id
-      MYSQL_DATABASE: test
-      MYSQL_USER: admin
+      MYSQL_DATABASE: sigap_db
+      MYSQL_USER: sigap
       MYSQL_PASSWORD: S!GApRujukan@kemkes.go.id
     ports:
-      - "3308:3306" # expose MySQL di port 3308
+      - "3308:3306"
     volumes:
-      - ./db_data:/var/lib/mysql
+      - db_data:/var/lib/mysql
 
+  # PHP-FPM
   php:
     build:
-      context: .
+      context: ./php
       dockerfile: Dockerfile
-    container_name: php_app_rujukan
+    container_name: php_sigap
     restart: always
     volumes:
-      - ./apps:/var/www/html
-    ports:
-      - "8088:80" # expose PHP+Apache di port 8088
+      - ./apps/sigap:/var/www/html
     depends_on:
       - db
+
+  # Nginx
+  nginx:
+    image: nginx:alpine
+    container_name: nginx_sigap
+    restart: always
+    ports:
+      - "8088:80"
+    volumes:
+      - ./apps/sigap:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
 
 volumes:
   db_data:
