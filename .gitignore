@@ -1,4 +1,5 @@
 .vscode/
 docker-compose.yml
 Dockerfile
+nginx/default.conf
 db_data/
