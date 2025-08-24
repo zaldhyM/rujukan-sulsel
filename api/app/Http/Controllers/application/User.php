@@ -22,7 +22,7 @@ class User extends Controller
             return response()->json([
                 'token' => $token,
                 "success" => $token ? true : false,
-                'username' => $user->username,
+                'user' => $user,
                 'faskes' => $datafaskes, 
                 'message' => 'Login berhasil'
             ]);
